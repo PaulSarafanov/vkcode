@@ -1,9 +1,9 @@
-package ru.nsk.positiveteam.vkcode.core.data;
+package ru.nsk.positiveteam.vkcode.api.dto;
 
 import lombok.Data;
 
 @Data
-public class ObjMethodLinkDo {
+public class ObjMethodLinkDto {
     private Long id;
     private Long objId;
     private Long methodId;

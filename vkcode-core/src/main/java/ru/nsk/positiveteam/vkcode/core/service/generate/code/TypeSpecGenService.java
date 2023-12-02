@@ -17,10 +17,12 @@ public class TypeSpecGenService {
     public static final String CLASS_TYPE = "Class";
 
     private final MethodGenService methodGenService;
+    private final FieldGenService fieldGenService;
 
     public TypeSpec generate(ObjDto objDto) {
         TypeSpec.Builder builder = getBuilder(objDto);
 
+        fieldGenService.generate(objDto).forEach(builder::addField);
         methodGenService.generate(objDto).forEach(builder::addMethod);
 
         return builder

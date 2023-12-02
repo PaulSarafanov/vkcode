@@ -16,44 +16,11 @@
         <sqlFile path="20232.12.10_method_table_create.sql" relativeToChangelogFile="true"/>
     </changeSet>
 
+    <changeSet author="Pavel Sarafanov" id="20232.12.16_field_link_table_create">
+        <sqlFile path="20232.12.16_field_link_table_create.sql" relativeToChangelogFile="true"/>
+    </changeSet>
 
-
-
-
-
-
-
-
-<!--    <changeSet author="Pavel Sarafanov" id="20232.12.03_group_table_create">-->
-<!--        <sqlFile path="20232.12.03_group_table_create.sql" relativeToChangelogFile="true"/>-->
-<!--    </changeSet>-->
-
-<!--    <changeSet author="Pavel Sarafanov" id="20232.12.03_group_link_table_create">-->
-<!--        <sqlFile path="20232.12.03_group_link_table_create.sql" relativeToChangelogFile="true"/>-->
-<!--    </changeSet>-->
-
-<!--    <changeSet author="Pavel Sarafanov" id="20232.12.03_field_link_table_create">-->
-<!--        <sqlFile path="20232.12.03_field_link_table_create.sql" relativeToChangelogFile="true"/>-->
-<!--    </changeSet>-->
-
-<!--    <changeSet author="Pavel Sarafanov" id="20232.12.03_add_data_to_group_table">-->
-<!--        <sqlFile path="20232.12.03_add_data_to_group_table.sql" relativeToChangelogFile="true"/>-->
-<!--    </changeSet>-->
-
-<!--    <changeSet author="Pavel Sarafanov" id="20232.12.03_add_data_to_group_link_table">-->
-<!--        <sqlFile path="20232.12.03_add_data_to_group_link_table.sql" relativeToChangelogFile="true"/>-->
-<!--    </changeSet>-->
-
-<!--    <changeSet author="Pavel Sarafanov" id="20232.12.03_add_data_to_field_link_table">-->
-<!--        <sqlFile path="20232.12.03_add_data_to_field_link_table.sql" relativeToChangelogFile="true"/>-->
-<!--    </changeSet>-->
-
-
-
-<!--    <changeSet author="Pavel Sarafanov" id="20232.12.03_add_data_to_program_table">-->
-<!--        <sqlFile path="20232.12.03_add_data_to_program_table.sql" relativeToChangelogFile="true"/>-->
-<!--    </changeSet>-->
-
-
-
+    <changeSet author="Pavel Sarafanov" id="20232.12.16_annotation_link_table_create">
+        <sqlFile path="20232.12.16_annotation_link_table_create.sql" relativeToChangelogFile="true"/>
+    </changeSet>
 </databaseChangeLog>

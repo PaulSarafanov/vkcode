@@ -7,6 +7,6 @@ public class ProgramDto {
     private Long id;
     private String description;
     private String name;
-    private Integer version;
+    private String version;
     private String groupId;
 }

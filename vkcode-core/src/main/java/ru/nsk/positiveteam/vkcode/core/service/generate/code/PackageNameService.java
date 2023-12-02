@@ -10,6 +10,10 @@ import ru.nsk.positiveteam.vkcode.api.dto.ProgramDto;
 public class PackageNameService {
 
     public String getPackageName(ProgramDto programDto, ObjDto objDto) {
-        return programDto.getGroupId() + ".v" + programDto.getVersion() + ".generated";
+       if ("Inner".equals(objDto.getType()) || "Class".equals(objDto.getType())) {
+            return programDto.getGroupId() + ".generated";
+        } else {
+            return programDto.getGroupId() + ".generated."+objDto.getType().toLowerCase();
+        }
     }
 }

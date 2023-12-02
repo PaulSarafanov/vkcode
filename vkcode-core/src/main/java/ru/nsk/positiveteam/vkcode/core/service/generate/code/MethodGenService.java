@@ -5,11 +5,13 @@ import org.springframework.javapoet.MethodSpec;
 import org.springframework.stereotype.Service;
 import ru.nsk.positiveteam.vkcode.api.dto.MethodDto;
 import ru.nsk.positiveteam.vkcode.api.dto.ObjDto;
+import ru.nsk.positiveteam.vkcode.api.dto.ObjMethodLinkDto;
 import ru.nsk.positiveteam.vkcode.core.service.data.ObjDataService;
 import ru.nsk.positiveteam.vkcode.core.service.data.ObjMethodDataService;
 
 import javax.lang.model.element.Modifier;
 import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -19,16 +21,21 @@ public class MethodGenService {
     private final ObjMethodDataService objMethodDataService;
     private final ObjDataService objDataService;
 
-    public List<MethodSpec> generate(ObjDto objDto) {
-        return objMethodDataService.getByObjId(objDto.getId()).stream()
-                .map(methodDto -> generate(methodDto, objDto))
+    public List<MethodSpec> generate(ObjDto mainObjDto) {
+        return objMethodDataService.getByMainObjId(mainObjDto.getId()).stream()
+                .map(this::generate)
                 .toList();
     }
 
-    protected MethodSpec generate(MethodDto methodDto, ObjDto objDto) {
+    protected MethodSpec generate(ObjMethodLinkDto linkDto) {
+        MethodDto methodDto = objMethodDataService.getByObjMethodLinkDto(linkDto);
+        return generate(linkDto, methodDto);
+    }
+
+    protected MethodSpec generate(ObjMethodLinkDto linkDto, MethodDto methodDto) {
         return MethodSpec.methodBuilder(methodDto.getName())
+                .addModifiers(getModifiers(linkDto))
                 .returns(getReturnType(methodDto))
-                .addModifiers(Modifier.PUBLIC, Modifier.ABSTRACT)
                 .build();
     }
 
@@ -41,5 +48,19 @@ public class MethodGenService {
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    protected List<Modifier> getModifiers(ObjMethodLinkDto linkDto) {
+        //todo переделать на abstrac,public и case
+        List<Modifier> result = new ArrayList<>();
+        if ("public".equals(linkDto.getType())) {
+            result.add(Modifier.PUBLIC);
+        }
+
+        if ("abstractPublic".equals(linkDto.getType())) {
+            result.add(Modifier.PUBLIC);
+            result.add(Modifier.ABSTRACT);
+        }
+        return result;
     }
 }

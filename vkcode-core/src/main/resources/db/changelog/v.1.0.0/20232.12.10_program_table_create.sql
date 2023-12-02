@@ -14,7 +14,7 @@ create table program_obj_link_table
     obj_id     BIGINT not null
 );
 
-CREATE UNIQUE INDEX idx_program_id_obj_id_program_obj_link_table ON program_obj_link_table (program_id, obj_id);
+CREATE UNIQUE INDEX uidx_program_id_obj_id_program_obj_link_table ON program_obj_link_table (program_id, obj_id);
 
 
 INSERT INTO program_table (id, description, name, version, group_id)
@@ -23,17 +23,14 @@ VALUES (1,
         'VkCodeGen',
         '0.0.1-SNAPSHOT',
         'ru.nsk.positiveteam');
-INSERT INTO program_obj_link_table (id, program_id, obj_id)
+INSERT INTO program_obj_link_table (program_id, obj_id)
 VALUES (1,
-        1,
-        4);
-INSERT INTO program_obj_link_table (id, program_id, obj_id)
-VALUES (1,
-        1,
         5);
-INSERT INTO program_obj_link_table (id, program_id, obj_id)
+INSERT INTO program_obj_link_table (program_id, obj_id)
 VALUES (1,
-        1,
         6);
+INSERT INTO program_obj_link_table (program_id, obj_id)
+VALUES (1,
+        7);
 
 
