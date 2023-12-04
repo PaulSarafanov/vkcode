@@ -9,12 +9,12 @@ import ru.nsk.positiveteam.vkcode.api.dto.ObjDto;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class ObjCodeGenServiceTest extends BaseSpringTest {
+public class NameObjCodeGenTest extends BaseSpringTest {
     @Autowired
     private ObjCodeGenService service;
-    @Value("classpath:../test-classes/java/example/objDo_test.json")
+    @Value("classpath:../test-classes/java/example/name_obj.json")
     private Resource defResource;
-    @Value("classpath:../test-classes/java/example/objDo_test.result")
+    @Value("classpath:../test-classes/java/example/name_obj.result")
     private Resource resultResource;
 
     @Test

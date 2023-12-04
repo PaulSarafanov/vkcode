@@ -1,6 +1,0 @@
-package ru.nsk.positiveteam.vkcode.core.data.aware.data;
-
-@FunctionalInterface
-public interface UuidAware {
-    String getUuid();
-}

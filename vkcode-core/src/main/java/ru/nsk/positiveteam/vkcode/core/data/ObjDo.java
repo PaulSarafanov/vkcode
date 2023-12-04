@@ -8,5 +8,5 @@ public class ObjDo {
     private String name;
     private String type;
     private String description;
-    private String class_name;
+    private String className;
 }

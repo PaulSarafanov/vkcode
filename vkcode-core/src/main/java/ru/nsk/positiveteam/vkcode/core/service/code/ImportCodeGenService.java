@@ -6,6 +6,8 @@ import ru.nsk.positiveteam.vkcode.api.dto.ObjDto;
 @Service
 public class ImportCodeGenService {
     public String generate(ObjDto dto) {
-        return "import lombok.Data;";
+        StringBuilder builder = new StringBuilder();
+        dto.getFields().forEach(elem -> builder.append("import ").append(elem.getClassName()).append(";\n"));
+        return builder.toString();
     }
 }

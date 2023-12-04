@@ -11,7 +11,7 @@ VALUES (2,
 INSERT INTO obj_table (id, name, class_name)
 VALUES (3,
         'UUID',
-        'java.util.UUID');
+        'java.util.String');
 
 INSERT INTO obj_table (id, name, class_name)
 VALUES (4,

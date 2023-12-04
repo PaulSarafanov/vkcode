@@ -16,6 +16,6 @@ public class GenerateController implements GenerateApi {
     @Override
     public String generateStr(Long objId) {
         ObjDto objDto = objService.getById(objId);
-        return objDto != null ? service.generate(objDto) : "";
+        return objDto != null ? service.generate(objDto) : "Not Found";
     }
 }
