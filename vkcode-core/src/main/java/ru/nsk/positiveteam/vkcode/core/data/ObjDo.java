@@ -1,15 +1,12 @@
 package ru.nsk.positiveteam.vkcode.core.data;
 
 import lombok.Data;
-import ru.nsk.positiveteam.vkcode.core.data.aware.data.JsonDataAware;
-import ru.nsk.positiveteam.vkcode.core.data.aware.data.NameAware;
-import ru.nsk.positiveteam.vkcode.core.data.aware.data.TypeAware;
-import ru.nsk.positiveteam.vkcode.core.data.aware.data.UuidAware;
 
 @Data
-public class ObjDo implements UuidAware, NameAware, TypeAware, JsonDataAware {
-    private String uuid;
+public class ObjDo {
+    private Long id;
     private String name;
     private String type;
-    private String JsonData;
+    private String description;
+    private String class_name;
 }

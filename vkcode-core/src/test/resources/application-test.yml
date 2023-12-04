@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:vkcode_db_test
+  liquibase:
+    url: jdbc:h2:mem:~/vkcode_db_test;CASE_INSENSITIVE_IDENTIFIERS=TRUE
+    change-log: classpath:db/changelog/db.changelog-test.xml

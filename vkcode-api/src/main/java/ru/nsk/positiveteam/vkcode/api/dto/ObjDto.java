@@ -4,8 +4,9 @@ import lombok.Data;
 
 @Data
 public class ObjDto {
-    private String uuid;
+    private Long id;
     private String name;
     private String type;
-    private String jsonData;
+    private String description;
+    private String class_name;
 }

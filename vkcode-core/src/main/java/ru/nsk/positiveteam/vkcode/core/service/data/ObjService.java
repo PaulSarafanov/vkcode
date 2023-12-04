@@ -19,4 +19,9 @@ public class ObjService {
         List<ObjDo> objList = objRepo.getAll();
         return objDoToObjDtoMapper.mapTo(objList);
     }
+
+    public ObjDto getById(Long id) {
+        ObjDo objDo = objRepo.getById(id);
+        return objDo != null ? objDoToObjDtoMapper.mapTo(objDo) : null;
+    }
 }

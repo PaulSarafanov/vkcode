@@ -1,14 +1,14 @@
-package ru.nsk.positiveteam.vkcode.core.data;
+package ru.nsk.positiveteam.vkcode.test;
 
 import lombok.Data;
-import ru.nsk.positiveteam.vkcode.core.data.aware.data.IdAware;
 import ru.nsk.positiveteam.vkcode.core.data.aware.data.JsonDataAware;
 import ru.nsk.positiveteam.vkcode.core.data.aware.data.NameAware;
 import ru.nsk.positiveteam.vkcode.core.data.aware.data.TypeAware;
+import ru.nsk.positiveteam.vkcode.core.data.aware.data.UuidAware;
 
 @Data
-public class GroupDo implements IdAware, NameAware, TypeAware, JsonDataAware {
-    private Long id;
+public class ObjDo implements UuidAware, NameAware, TypeAware, JsonDataAware {
+    private String uuid;
     private String name;
     private String type;
     private String JsonData;
