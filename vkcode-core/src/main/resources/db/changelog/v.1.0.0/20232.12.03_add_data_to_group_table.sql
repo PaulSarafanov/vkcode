@@ -38,3 +38,8 @@ INSERT INTO group_table (id, name, type)
 VALUES (8,
         'DataTransferObject',
         '');
+
+INSERT INTO group_table (id, name, type)
+VALUES (9,
+        'Interface',
+        '');

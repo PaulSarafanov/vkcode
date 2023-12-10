@@ -3,6 +3,7 @@ package ru.nsk.positiveteam.vkcode.core.service.code;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import ru.nsk.positiveteam.vkcode.api.dto.ObjDto;
+import ru.nsk.positiveteam.vkcode.api.dto.ProgramDto;
 
 @Service
 @AllArgsConstructor
@@ -15,7 +16,7 @@ public class ObjCodeGenService {
     private final ImplementsCodeGenService implementsCodeGenService;
     private final BodyCodeGenService bodyCodeGenService;
 
-    public String generate(ObjDto dto) {
+    public String generate(ProgramDto programDto, ObjDto dto) {
         String result = packgeCodeGenService.generateCode(dto) +
                 "\n\n" +
                 importCodeGenService.generate(dto) +

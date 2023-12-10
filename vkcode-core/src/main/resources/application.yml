@@ -10,3 +10,4 @@ spring:
     url: jdbc:postgresql://localhost:5432/vkcode_db
     user: postgres
     password: postgres
+    default-schema: public

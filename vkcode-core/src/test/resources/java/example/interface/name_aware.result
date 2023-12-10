@@ -1,0 +1,6 @@
+package ru.nsk.positiveteam.vkcode.test;
+
+@FunctionalInterface
+public interface NameAware {
+    String getName();
+}

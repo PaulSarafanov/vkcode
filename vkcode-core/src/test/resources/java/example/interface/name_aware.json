@@ -1,0 +1,44 @@
+{
+  "id": 5,
+  "name": "Интерфейс для получения Name типа String",
+  "type": null,
+  "description": null,
+  "className": "NameAware",
+  "fields": [
+    {
+      "id": 1,
+      "name": "String",
+      "type": null,
+      "description": null,
+      "className": "java.lang.String",
+      "fields": null,
+      "groups": null
+    }
+  ],
+  "groups": [
+    {
+      "id": 2,
+      "name": "Java 21",
+      "type": "",
+      "description": null
+    },
+    {
+      "id": 4,
+      "name": "API",
+      "type": "",
+      "description": null
+    },
+    {
+      "id": 5,
+      "name": "Getter",
+      "type": "",
+      "description": null
+    },
+    {
+      "id": 6,
+      "name": "FunctionalInterface",
+      "type": "",
+      "description": null
+    }
+  ]
+}

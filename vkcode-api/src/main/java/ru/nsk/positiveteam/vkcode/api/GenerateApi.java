@@ -6,6 +6,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @RequestMapping("/v1")
 public interface GenerateApi {
-    @GetMapping("/generate/string/{objId}")
-    String generateStr(@PathVariable Long objId);
+
+    @GetMapping("/generate/program/string/{programId}")
+    String generateProgramStr(@PathVariable Long programId);
+
+    @GetMapping("/generate/program/{programId}")
+    String generateProgram(@PathVariable Long programId);
 }

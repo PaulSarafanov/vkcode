@@ -9,12 +9,12 @@ import ru.nsk.positiveteam.vkcode.api.dto.ObjDto;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class NameObjCodeGenTest extends BaseSpringTest {
+public class InterfaceCodeGenTest extends BaseSpringTest {
     @Autowired
     private ObjCodeGenService service;
-    @Value("classpath:../test-classes/java/example/name_aware.json")
+    @Value("classpath:../test-classes/java/example/interface/name_aware.json")
     private Resource defResource;
-    @Value("classpath:../test-classes/java/example/name_aware.result")
+    @Value("classpath:../test-classes/java/example/interface/name_aware.result")
     private Resource resultResource;
 
     @Test

@@ -8,20 +8,38 @@ import ru.nsk.positiveteam.vkcode.core.data.mapper.ObjDoToObjDtoMapper;
 import ru.nsk.positiveteam.vkcode.core.data.repo.ObjRepo;
 
 import java.util.List;
+import java.util.Objects;
 
 @Service
 @AllArgsConstructor
 public class ObjService {
     private ObjRepo objRepo;
     private ObjDoToObjDtoMapper objDoToObjDtoMapper;
+    private FieldLinkService fieldLinkService;
+    private GroupLinkService groupLinkService;
 
     public List<ObjDto> getAll() {
         List<ObjDo> objList = objRepo.getAll();
-        return objDoToObjDtoMapper.mapTo(objList);
+        return objList.stream()
+                .map(this::mapTo)
+                .filter(Objects::nonNull)
+                .toList();
     }
 
     public ObjDto getById(Long id) {
         ObjDo objDo = objRepo.getById(id);
-        return objDo != null ? objDoToObjDtoMapper.mapTo(objDo) : null;
+        return objDo != null ? mapTo(objDo) : null;
+    }
+
+    protected ObjDto mapTo(ObjDo objDo) {
+        ObjDto result = objDoToObjDtoMapper.mapTo(objDo);
+        List<ObjDto> fieldList = fieldLinkService.getAll(objDo.getId()).stream()
+                .map(fieldLinkDo -> getById(fieldLinkDo.getObjId()))
+                .filter(Objects::nonNull)
+                .toList();
+        result.setFields(fieldList);
+
+        result.setGroups(groupLinkService.getAll(objDo.getId()));
+        return result;
     }
 }

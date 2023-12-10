@@ -4,6 +4,10 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
 
+    <changeSet author="Pavel Sarafanov" id="20232.12.03_create_schema">
+        <sqlFile path="20232.12.03_create_schema.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+
     <changeSet author="Pavel Sarafanov" id="20232.12.03_obj_table_create">
         <sqlFile path="20232.12.03_obj_table_create.sql" relativeToChangelogFile="true"/>
     </changeSet>
@@ -34,5 +38,13 @@
 
     <changeSet author="Pavel Sarafanov" id="20232.12.03_add_data_to_field_link_table">
         <sqlFile path="20232.12.03_add_data_to_field_link_table.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+
+    <changeSet author="Pavel Sarafanov" id="20232.12.10_program_table_create">
+        <sqlFile path="20232.12.10_program_table_create.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+
+    <changeSet author="Pavel Sarafanov" id="20232.12.03_add_data_to_program_table">
+        <sqlFile path="20232.12.03_add_data_to_program_table.sql" relativeToChangelogFile="true"/>
     </changeSet>
 </databaseChangeLog>
