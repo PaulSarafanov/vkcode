@@ -3,9 +3,11 @@ package ru.nsk.positiveteam.vkcode.core.data;
 import lombok.Data;
 
 @Data
-public class GroupDo {
+public class MethodDo {
     private Long id;
-    private String name;
-    private String type;
     private String description;
+    private String name;
+    private Long version;
+    private String type;
+    private Long returnObjId;
 }

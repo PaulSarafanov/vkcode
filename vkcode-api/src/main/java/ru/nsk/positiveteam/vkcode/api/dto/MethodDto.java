@@ -3,9 +3,11 @@ package ru.nsk.positiveteam.vkcode.api.dto;
 import lombok.Data;
 
 @Data
-public class GroupDto {
+public class MethodDto {
     private Long id;
-    private String name;
-    private String type;
     private String description;
+    private String name;
+    private Long version;
+    private String type;
+    private Long returnObjId;
 }
