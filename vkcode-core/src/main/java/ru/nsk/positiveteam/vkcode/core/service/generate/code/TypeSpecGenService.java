@@ -12,9 +12,10 @@ import javax.lang.model.element.Modifier;
 @AllArgsConstructor
 public class TypeSpecGenService {
     public static final String INNER_CLASS_TYPE = "Inner";
-    public static final String INTERFACE_CLASS_TYPE = "Interface";
-    public static final String ENUM_CLASS_TYPE = "Enum";
-    public static final String CLASS_TYPE = "Class";
+    public static final String INTERFACE_CLASS_TYPE = "interface";
+    public static final String ANNOTATION_CLASS_TYPE = "@interface";
+    public static final String ENUM_CLASS_TYPE = "enum";
+    public static final String CLASS_TYPE = "class";
 
     private final MethodGenService methodGenService;
     private final FieldGenService fieldGenService;
@@ -33,11 +34,12 @@ public class TypeSpecGenService {
     protected TypeSpec.Builder getBuilder(ObjDto objDto) {
         return switch (objDto.getType()) {
             case INTERFACE_CLASS_TYPE -> TypeSpec.interfaceBuilder(objDto.getClassName());
+            case ANNOTATION_CLASS_TYPE -> TypeSpec.annotationBuilder(objDto.getClassName());
             case CLASS_TYPE -> TypeSpec.classBuilder(objDto.getClassName());
             case ENUM_CLASS_TYPE -> TypeSpec.enumBuilder(objDto.getClassName());
             case INNER_CLASS_TYPE -> throw new RuntimeException("Не верный тип объекта INNER для генерации!");
             default ->
-                    throw new RuntimeException(STR. "Не известный тип объекта \{ objDto.getType() } для генерации!");
+                    throw new RuntimeException(STR. "Не известный тип объекта \{ objDto.getType() } для генерации!" );
         };
     }
 }

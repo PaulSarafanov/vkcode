@@ -39,7 +39,7 @@ VALUES (5,
         'Интерфейс для получения Name типа String',
         'NameAware',
         1,
-        'Interface',
+        'interface',
         'NameAware');
 
 INSERT INTO obj_table (id, description, name, version, type, class_name)
@@ -47,14 +47,14 @@ VALUES (6,
         'Интерфейс для получения Id типа Long',
         'IdAware',
         1,
-        'Interface',
+        'interface',
         'IdAware');
 INSERT INTO obj_table (id, description, name, version, type, class_name)
 VALUES (7,
         'Информация об объекте хранящейся в таблице obj_table',
         'ObjDo',
         1,
-        'Class',
+        'class',
         'ObjDo');
 
 INSERT INTO obj_table (id, name, class_name, version, type)
@@ -62,4 +62,4 @@ VALUES (8,
         'Data',
         'lombok.Data',
         '1.18.30',
-        'Dependency');
+        '@interface');
