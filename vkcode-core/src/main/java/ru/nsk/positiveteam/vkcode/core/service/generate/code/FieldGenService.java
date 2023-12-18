@@ -5,10 +5,10 @@ import org.springframework.javapoet.FieldSpec;
 import org.springframework.stereotype.Service;
 import ru.nsk.positiveteam.vkcode.api.dto.ObjDto;
 import ru.nsk.positiveteam.vkcode.api.dto.ObjFieldLinkDto;
+import ru.nsk.positiveteam.vkcode.api.dto.ProgramDto;
 import ru.nsk.positiveteam.vkcode.core.service.data.ObjFieldDataService;
 
 import javax.lang.model.element.Modifier;
-import java.lang.reflect.Type;
 import java.util.List;
 
 
@@ -16,32 +16,23 @@ import java.util.List;
 @AllArgsConstructor
 public class FieldGenService {
     private final ObjFieldDataService objFieldDataService;
+    private final PackageNameService packageNameService;
 
-    public List<FieldSpec> generate(ObjDto mainObjDto) {
+    public List<FieldSpec> generate(ProgramDto programDto, ObjDto mainObjDto) {
         return objFieldDataService.getByObjId(mainObjDto.getId()).stream()
-                .map(this::generate)
+                .map(elem -> generate(programDto, elem))
                 .toList();
     }
 
-    protected FieldSpec generate(ObjFieldLinkDto linkDto) {
+    protected FieldSpec generate(ProgramDto programDto, ObjFieldLinkDto linkDto) {
         ObjDto objDto = objFieldDataService.getByObjFieldLinkDto(linkDto);
-        return generate(linkDto, objDto);
+        return generate(programDto, linkDto, objDto);
     }
 
-    protected FieldSpec generate(ObjFieldLinkDto linkDto, ObjDto objDto) {
-        FieldSpec.Builder result = FieldSpec.builder(getFieldType(objDto), linkDto.getName());
+    protected FieldSpec generate(ProgramDto programDto, ObjFieldLinkDto linkDto, ObjDto objDto) {
+        FieldSpec.Builder result = FieldSpec.builder(packageNameService.getClass(programDto, objDto), linkDto.getName());
         addModifiers(result, linkDto);
         return result.build();
-    }
-
-    protected Type getFieldType(ObjDto objDto) {
-        //todo доделать определение имени класса
-        String className = objDto.getClassName();
-        try {
-            return Class.forName(className);
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }
     }
 
     protected void addModifiers(FieldSpec.Builder result, ObjFieldLinkDto linkDto) {

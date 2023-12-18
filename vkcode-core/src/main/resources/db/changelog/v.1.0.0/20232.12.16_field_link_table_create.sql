@@ -30,7 +30,7 @@ VALUES (7,
 
 INSERT INTO field_link_table (main_obj_id, obj_id, name, type)
 VALUES (7,
-        1,
+        3,
         'version',
         'private');
 

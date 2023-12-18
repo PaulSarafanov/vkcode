@@ -20,7 +20,7 @@ CREATE UNIQUE INDEX uidx_program_id_obj_id_program_obj_link_table ON program_obj
 INSERT INTO program_table (id, description, name, version, group_id)
 VALUES (1,
         'description',
-        'VkCodeGen',
+        'vkcode',
         '0.0.1-SNAPSHOT',
         'ru.nsk.positiveteam');
 INSERT INTO program_obj_link_table (program_id, obj_id)

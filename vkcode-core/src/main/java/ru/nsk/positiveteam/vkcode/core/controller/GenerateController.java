@@ -34,7 +34,7 @@ public class GenerateController implements GenerateApi {
     @Override
     public String generateProgram(Long programId) {
         Optional.ofNullable(programDataService.getById(programId))
-                .ifPresent(elem -> programGenerateService.generate(Path.of("/temp/"), elem));
+                .ifPresent(elem -> programGenerateService.generate(Path.of("/temp/" + elem.getName() + "-generated/"), elem));
         return "Done!";
     }
 }

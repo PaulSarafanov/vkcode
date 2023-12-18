@@ -38,7 +38,7 @@ public class JavaFileGenerateService {
     }
 
     public JavaFile generateOne(ProgramDto programDto, ObjDto objDto) {
-        return JavaFile.builder(packageNameService.getPackageName(programDto, objDto), typeSpecGenService.generate(objDto))
+        return JavaFile.builder(packageNameService.getPackageName(programDto, objDto), typeSpecGenService.generate(programDto, objDto))
                 .build();
     }
 }

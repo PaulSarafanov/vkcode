@@ -7,7 +7,7 @@ public class ObjDto {
     private Long id;
     private String description;
     private String name;
-    private Integer version;
+    private String version;
     private String type;
-    private String className;
+    private String packageName;
 }

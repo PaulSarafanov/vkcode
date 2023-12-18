@@ -12,3 +12,13 @@ INSERT INTO annotation_link_table (main_obj_id, obj_id,  type)
 VALUES (7,
         8,
         'classAnnotation');
+
+INSERT INTO annotation_link_table (main_obj_id, obj_id,  type)
+VALUES (5,
+        9,
+        'classAnnotation');
+
+INSERT INTO annotation_link_table (main_obj_id, obj_id,  type)
+VALUES (6,
+        9,
+        'classAnnotation');

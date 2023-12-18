@@ -1,13 +1,13 @@
-package ru.nsk.positiveteam.vkcode.core.data;
+package ru.nsk.positiveteam.vkcode.api.dto;
 
 import lombok.Data;
 
 @Data
-public class ObjDo {
+public class AnnotationLinkDto {
     private Long id;
+    private Long mainObjId;
+    private Long objId;
     private String description;
     private String name;
-    private String version;
     private String type;
-    private String packageName;
 }
