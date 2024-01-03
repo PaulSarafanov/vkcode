@@ -1,13 +1,12 @@
 spring:
   datasource:
-    driverClassName: org.postgresql.Driver
-    url: jdbc:postgresql://vkcodegen.ru:5432/vkcode_db
+    url: jdbc:postgresql://localhost:5432/vkcode_db
     username: postgres
     password: postgres
   liquibase:
     enabled: true
     change-log: classpath:db/changelog/db.changelog-master.xml
-    url: jdbc:postgresql://vkcodegen.ru:5432/vkcode_db
+    url: jdbc:postgresql://localhost:5432/vkcode_db
     user: postgres
     password: postgres
     default-schema: public

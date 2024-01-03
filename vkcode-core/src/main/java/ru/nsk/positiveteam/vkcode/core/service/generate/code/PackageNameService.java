@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import ru.nsk.positiveteam.vkcode.api.dto.ObjDto;
 import ru.nsk.positiveteam.vkcode.api.dto.ProgramDto;
 
-import static org.springframework.util.StringUtils.*;
+import static org.springframework.util.StringUtils.hasText;
 import static ru.nsk.positiveteam.vkcode.core.service.generate.code.TypeSpecGenService.*;
 
 @Service
@@ -42,9 +42,9 @@ public class PackageNameService {
 
     protected String getClassNameStr(ProgramDto programDto, ObjDto objDto) {
         if (hasText(objDto.getPackageName())) {
-            return STR. "\{ objDto.getPackageName() }.\{ objDto.getName() }" ;
+            return objDto.getPackageName() + "." + objDto.getName();
         } else {
-            return STR. "\{ this.getPackageName(programDto, objDto) }.\{ objDto.getName() }" ;
+            return this.getPackageName(programDto, objDto) + "." + objDto.getName();
         }
     }
 }

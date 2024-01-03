@@ -23,14 +23,14 @@ services:
       PGADMIN_DEFAULT_EMAIL: pgadmin4@dev.ru
       PGADMIN_DEFAULT_PASSWORD: root
     volumes:
-      - /c/work/docker/vkcode/volumes/pgadmin:/var/lib/pgadmin
+      - /d/work/docker/vkcode/volumes/pgadmin:/var/lib/pgadmin
     ports:
       - 81:80
     links:
       - "postgres:dev-postgres-ip"
 
   opensearch-node1:
-    image: opensearchproject/opensearch:1.3.5
+    image: opensearchproject/opensearch:latest
     container_name: vkcode-node1
     environment:
       - cluster.name=vkcode-cluster
@@ -52,12 +52,14 @@ services:
       - "9600:9600" # required for Performance Analyzer
 
   opensearch-dashboards:
-     image: opensearchproject/opensearch-dashboards:1.3.5
+     image: opensearchproject/opensearch-dashboards:latest
      container_name: vkcode-dashboards
      ports:
        - "5601:5601"
      expose:
         - "5601"
      environment:
-        - 'OPENSEARCH_HOSTS=["http://vkcode-node1:9200"]'
+        - 'OPENSEARCH_HOSTS=["http://vkcode-node1-ip:9200"]'
         - "DISABLE_SECURITY_DASHBOARDS_PLUGIN=true" # disables security dashboards plugin in OpenSearch Dashboards
+     links:
+       - "opensearch-node1:vkcode-node1-ip"
