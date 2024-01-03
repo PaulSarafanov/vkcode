@@ -29,12 +29,12 @@ public class PomGenerateService {
                 "    <modelVersion>4.0.0</modelVersion>\n" +
                 "\n" +
                 "    <parent>\n" +
-                STR. "        <groupId>\{ dto.getGroupId() }</groupId>\n" +
-                STR. "        <artifactId>\{ dto.getName().toLowerCase() }</artifactId>\n" +
-                STR. "        <version>\{ dto.getVersion() }</version>\n" +
+                "        <groupId>" + dto.getGroupId() + "</groupId>\n" +
+                "        <artifactId>" + dto.getName().toLowerCase() + "</artifactId>\n" +
+                "        <version>" + dto.getVersion() + "</version>\n" +
                 "    </parent>\n" +
                 "\n" +
-                STR. "    <artifactId>\{ dto.getName().toLowerCase() }-generated</artifactId>\n" +
+                "    <artifactId>" + dto.getName().toLowerCase() + "-generated</artifactId>\n" +
                 "    <packaging>jar</packaging>\n" +
                 "\n" +
                 getDependencies() +

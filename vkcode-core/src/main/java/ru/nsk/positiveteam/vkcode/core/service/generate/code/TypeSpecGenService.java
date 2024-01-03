@@ -39,7 +39,7 @@ public class TypeSpecGenService {
             case ENUM_CLASS_TYPE -> TypeSpec.enumBuilder(objDto.getClassName());
             case INNER_CLASS_TYPE -> throw new RuntimeException("Не верный тип объекта INNER для генерации!");
             default ->
-                    throw new RuntimeException(STR. "Не известный тип объекта \{ objDto.getType() } для генерации!" );
+                    throw new RuntimeException("Не известный тип объекта " + objDto.getType() + " для генерации!" );
         };
     }
 }
