@@ -2,9 +2,9 @@ package ru.nsk.positiveteam.vkcode.core.service.data;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-import ru.nsk.positiveteam.vkcode.api.dto.ObjDto;
-import ru.nsk.positiveteam.vkcode.core.data.ProgramObjLinkDo;
 import ru.nsk.positiveteam.vkcode.core.data.repo.ProgramObjLinkRepo;
+import ru.nsk.positiveteam.vkcode.generated.v1.api.dto.ObjDto;
+import ru.nsk.positiveteam.vkcode.generated.v1.data.ProgramObjLinkDo;
 
 import java.util.List;
 

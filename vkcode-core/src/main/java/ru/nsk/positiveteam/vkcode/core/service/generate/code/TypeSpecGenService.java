@@ -3,8 +3,8 @@ package ru.nsk.positiveteam.vkcode.core.service.generate.code;
 import lombok.AllArgsConstructor;
 import org.springframework.javapoet.TypeSpec;
 import org.springframework.stereotype.Service;
-import ru.nsk.positiveteam.vkcode.api.dto.ObjDto;
 import ru.nsk.positiveteam.vkcode.api.dto.ProgramDto;
+import ru.nsk.positiveteam.vkcode.generated.v1.api.dto.ObjDto;
 
 import javax.lang.model.element.Modifier;
 
@@ -42,8 +42,7 @@ public class TypeSpecGenService {
             case CLASS_TYPE -> TypeSpec.classBuilder(packageNameService.getClassName(programDto, objDto));
             case ENUM_CLASS_TYPE -> TypeSpec.enumBuilder(packageNameService.getClassName(programDto, objDto));
             case INNER_CLASS_TYPE -> throw new RuntimeException("Не верный тип объекта INNER для генерации!");
-            default ->
-                    throw new RuntimeException("Не известный тип объекта " + objDto.getType() + " для генерации!" );
+            default -> throw new RuntimeException("Не известный тип объекта " + objDto.getType() + " для генерации!");
         };
     }
 }

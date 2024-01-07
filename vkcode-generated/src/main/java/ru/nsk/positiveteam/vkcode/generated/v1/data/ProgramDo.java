@@ -1,12 +1,18 @@
-package ru.nsk.positiveteam.vkcode.core.data;
+package ru.nsk.positiveteam.vkcode.generated.v1.data;
 
 import lombok.Data;
 
 @Data
 public class ProgramDo {
-    private Long id;
     private String description;
-    private String name;
-    private String version;
+
     private String groupId;
+
+    private Long id;
+
+    private String name;
+
+    private String type;
+
+    private String version;
 }

@@ -3,10 +3,10 @@ package ru.nsk.positiveteam.vkcode.core.service.generate.code;
 import lombok.AllArgsConstructor;
 import org.springframework.javapoet.FieldSpec;
 import org.springframework.stereotype.Service;
-import ru.nsk.positiveteam.vkcode.api.dto.ObjDto;
 import ru.nsk.positiveteam.vkcode.api.dto.ObjFieldLinkDto;
 import ru.nsk.positiveteam.vkcode.api.dto.ProgramDto;
 import ru.nsk.positiveteam.vkcode.core.service.data.ObjFieldDataService;
+import ru.nsk.positiveteam.vkcode.generated.v1.api.dto.ObjDto;
 
 import javax.lang.model.element.Modifier;
 import java.util.List;

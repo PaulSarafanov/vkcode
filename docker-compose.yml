@@ -11,7 +11,7 @@ services:
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: vkcode_db
     volumes:
-        - /d/work/docker/vkcode/volumes/postgresql:/var/lib/postgresql/data
+      - /d/work/docker/vkcode/volumes/postgresql:/var/lib/postgresql/data
     ports:
       - "5432:5432"
 
@@ -52,14 +52,14 @@ services:
       - "9600:9600" # required for Performance Analyzer
 
   opensearch-dashboards:
-     image: opensearchproject/opensearch-dashboards:latest
-     container_name: vkcode-dashboards
-     ports:
-       - "5601:5601"
-     expose:
-        - "5601"
-     environment:
-        - 'OPENSEARCH_HOSTS=["http://vkcode-node1-ip:9200"]'
-        - "DISABLE_SECURITY_DASHBOARDS_PLUGIN=true" # disables security dashboards plugin in OpenSearch Dashboards
-     links:
-       - "opensearch-node1:vkcode-node1-ip"
+    image: opensearchproject/opensearch-dashboards:latest
+    container_name: vkcode-dashboards
+    ports:
+      - "5601:5601"
+    expose:
+      - "5601"
+    environment:
+      - 'OPENSEARCH_HOSTS=["http://vkcode-node1-ip:9200"]'
+      - "DISABLE_SECURITY_DASHBOARDS_PLUGIN=true" # disables security dashboards plugin in OpenSearch Dashboards
+    links:
+      - "opensearch-node1:vkcode-node1-ip"

@@ -4,23 +4,49 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
 
+    <changeSet author="Pavel Sarafanov" id="20232.12.10_program_table_create">
+        <sqlFile path="20232.12.10_program_table_create.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="Pavel Sarafanov" id="20232.12.03_load_first_program_data">
+        <loadUpdateData tableName="program_table" primaryKey="id" file="db/changelog/v.1.0.0/csv/program.csv"/>
+    </changeSet>
+    <changeSet author="Pavel Sarafanov" id="20232.12.03_load_first_program_dependencies_link_data">
+        <loadData tableName="program_dependencies_link_table"
+                  file="db/changelog/v.1.0.0/csv/program_dependencies_link.csv"/>
+    </changeSet>
+
     <changeSet author="Pavel Sarafanov" id="20232.12.03_obj_table_create">
         <sqlFile path="20232.12.03_obj_table_create.sql" relativeToChangelogFile="true"/>
     </changeSet>
+    <changeSet author="Pavel Sarafanov" id="20232.12.03_load_first_obj_data">
+        <loadUpdateData tableName="obj_table" primaryKey="id" file="db/changelog/v.1.0.0/csv/obj.csv"/>
+    </changeSet>
+    <changeSet author="Pavel Sarafanov" id="20232.12.03_load_first_program_obj_link_data">
+        <loadData tableName="program_obj_link_table" file="db/changelog/v.1.0.0/csv/program_obj_link.csv"/>
+    </changeSet>
 
-    <changeSet author="Pavel Sarafanov" id="20232.12.10_program_table_create">
-        <sqlFile path="20232.12.10_program_table_create.sql" relativeToChangelogFile="true"/>
+    <changeSet author="Pavel Sarafanov" id="20232.12.16_field_link_table_create">
+        <sqlFile path="20232.12.16_field_link_table_create.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="Pavel Sarafanov" id="20232.12.03_load_first_field_link_data">
+        <loadData tableName="field_link_table" file="db/changelog/v.1.0.0/csv/field_link.csv"/>
     </changeSet>
 
     <changeSet author="Pavel Sarafanov" id="20232.12.10_method_table_create">
         <sqlFile path="20232.12.10_method_table_create.sql" relativeToChangelogFile="true"/>
     </changeSet>
 
-    <changeSet author="Pavel Sarafanov" id="20232.12.16_field_link_table_create">
-        <sqlFile path="20232.12.16_field_link_table_create.sql" relativeToChangelogFile="true"/>
-    </changeSet>
-
     <changeSet author="Pavel Sarafanov" id="20232.12.16_annotation_link_table_create">
         <sqlFile path="20232.12.16_annotation_link_table_create.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="Pavel Sarafanov" id="20232.12.03_load_first_annotation_link_data">
+        <loadData tableName="annotation_link_table" file="db/changelog/v.1.0.0/csv/annotation.csv"/>
+    </changeSet>
+
+    <changeSet author="Pavel Sarafanov" id="20232.12.03_parameter_table_create">
+        <sqlFile path="20232.12.03_parameter_table_create.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="Pavel Sarafanov" id="20232.12.03_load_first_parameter_data">
+        <loadData tableName="parameter_table" file="db/changelog/v.1.0.0/csv/parameter.csv"/>
     </changeSet>
 </databaseChangeLog>

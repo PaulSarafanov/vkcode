@@ -1,12 +1,16 @@
-package ru.nsk.positiveteam.vkcode.core.data;
+package ru.nsk.positiveteam.vkcode.generated.v1.data;
 
 import lombok.Data;
 
 @Data
 public class ObjMethodLinkDo {
-    private Long id;
-    private Long objId;
-    private Long methodId;
     private String description;
+
+    private Long id;
+
+    private Long methodId;
+
+    private Long objId;
+
     private String type;
 }

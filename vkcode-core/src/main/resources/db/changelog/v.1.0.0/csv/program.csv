@@ -1,0 +1,4 @@
+"id","description","name","version","group_id","type"
+1,"description","vkcode","0.0.1-SNAPSHOT","ru.nsk.positiveteam","JAR"
+2,"Lombock https://projectlombok.org/","lombok","1.18.30","org.projectlombok","JAR"
+3,"Java SE 21","java","21.0.1","","Inner"

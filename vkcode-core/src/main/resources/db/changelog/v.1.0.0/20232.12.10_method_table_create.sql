@@ -3,7 +3,7 @@ create table method_table
     id            BIGSERIAL,
     description   varchar(6553),
     name          varchar(6553),
-    version       integer,
+    version       varchar(6553),
     type          varchar(6553),
     return_obj_id BIGINT
 );
@@ -46,6 +46,19 @@ VALUES (2,
         'getter',
         3);
 
+INSERT INTO method_table (id,
+                          description,
+                          name,
+                          version,
+                          type,
+                          return_obj_id)
+VALUES (3,
+        'Метод получает ObjDo by Id',
+        'getById',
+        1,
+        'abstractPublic',
+        7);
+
 INSERT INTO obj_method_link_table (method_id, obj_id, type)
 VALUES (2,
         5,
@@ -54,4 +67,9 @@ VALUES (2,
 INSERT INTO obj_method_link_table (method_id, obj_id, type)
 VALUES (1,
         6,
+        'abstractPublic');
+
+INSERT INTO obj_method_link_table (method_id, obj_id, type)
+VALUES (3,
+        25,
         'abstractPublic');

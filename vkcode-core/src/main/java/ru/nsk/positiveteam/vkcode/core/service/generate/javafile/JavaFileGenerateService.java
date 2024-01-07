@@ -3,11 +3,11 @@ package ru.nsk.positiveteam.vkcode.core.service.generate.javafile;
 import lombok.AllArgsConstructor;
 import org.springframework.javapoet.JavaFile;
 import org.springframework.stereotype.Service;
-import ru.nsk.positiveteam.vkcode.api.dto.ObjDto;
 import ru.nsk.positiveteam.vkcode.api.dto.ProgramDto;
-import ru.nsk.positiveteam.vkcode.core.service.generate.code.PackageNameService;
 import ru.nsk.positiveteam.vkcode.core.service.data.ProgramObjDataService;
+import ru.nsk.positiveteam.vkcode.core.service.generate.code.PackageNameService;
 import ru.nsk.positiveteam.vkcode.core.service.generate.code.TypeSpecGenService;
+import ru.nsk.positiveteam.vkcode.generated.v1.api.dto.ObjDto;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;

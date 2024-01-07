@@ -56,16 +56,12 @@ public class PomGeneratedService {
         StringBuilder result = new StringBuilder("    <dependencies>\n");
         dependencies.stream()
                 .filter(elem -> hasText(elem.getGroupId()))
-                .forEach(elem -> result.append("        <dependency>\n")
-                        .append("            <groupId>")
-                        .append(elem.getGroupId())
-                        .append("</groupId>\n")
-                        .append("            <artifactId>")
-                        .append(elem.getName())
-                        .append("</artifactId>\n")
-                        .append("            <version>")
-                        .append(elem.getVersion())
-                        .append("</version>\n")
+                .forEach(elem -> result
+                        .append("        <dependency>\n")
+                        .append("            <groupId>").append(elem.getGroupId()).append("</groupId>\n")
+                        .append("            <artifactId>").append(elem.getName()).append("</artifactId>\n")
+                        .append("            <version>").append(elem.getVersion()).append("</version>\n")
+                        .append("            <scope>provided</scope>\n")
                         .append("        </dependency>\n"));
         result.append("    </dependencies>\n");
         return result.toString();

@@ -21,6 +21,12 @@
         </dependency>
 
         <dependency>
+            <groupId>ru.nsk.positiveteam</groupId>
+            <artifactId>vkcode-generated</artifactId>
+            <version>${parent.version}</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>

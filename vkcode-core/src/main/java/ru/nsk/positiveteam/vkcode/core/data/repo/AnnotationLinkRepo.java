@@ -3,7 +3,7 @@ package ru.nsk.positiveteam.vkcode.core.data.repo;
 import org.apache.ibatis.annotations.Result;
 import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.Select;
-import ru.nsk.positiveteam.vkcode.core.data.AnnotationLinkDo;
+import ru.nsk.positiveteam.vkcode.generated.v1.data.AnnotationLinkDo;
 
 import java.util.List;
 

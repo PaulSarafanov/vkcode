@@ -4,9 +4,9 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import ru.nsk.positiveteam.vkcode.api.dto.MethodDto;
 import ru.nsk.positiveteam.vkcode.api.dto.ObjMethodLinkDto;
-import ru.nsk.positiveteam.vkcode.core.data.ObjMethodLinkDo;
 import ru.nsk.positiveteam.vkcode.core.data.mapper.ObjMethodLinkDoToObjMethodLinkDtoMapper;
 import ru.nsk.positiveteam.vkcode.core.data.repo.ObjMethodLinkRepo;
+import ru.nsk.positiveteam.vkcode.generated.v1.data.ObjMethodLinkDo;
 
 import java.util.List;
 

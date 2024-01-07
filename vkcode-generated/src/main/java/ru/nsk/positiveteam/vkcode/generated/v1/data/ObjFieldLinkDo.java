@@ -1,13 +1,18 @@
-package ru.nsk.positiveteam.vkcode.core.data;
+package ru.nsk.positiveteam.vkcode.generated.v1.data;
 
 import lombok.Data;
 
 @Data
 public class ObjFieldLinkDo {
-    private Long id;
-    private Long mainObjId;
-    private Long objId;
     private String description;
+
+    private Long id;
+
+    private Long mainObjId;
+
     private String name;
+
+    private Long objId;
+
     private String type;
 }

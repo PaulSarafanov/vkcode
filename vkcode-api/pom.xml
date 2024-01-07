@@ -15,6 +15,11 @@
 
     <dependencies>
         <dependency>
+            <groupId>ru.nsk.positiveteam</groupId>
+            <artifactId>vkcode-generated</artifactId>
+            <version>${parent.version}</version>
+        </dependency>
+        <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
         </dependency>
